@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { instance } from '../hook/useAxios'
-import { URL } from '../hook/useEnv'
 
 const MovieList = ({ URL }) => {
     const [data, setData] = useState([])
@@ -8,7 +7,7 @@ const MovieList = ({ URL }) => {
     const [page, setPage] = useState(1)
 
     useEffect(() => {
-    instance().get(`${URL}/movie?include_adult=false&include_video=false&language=en-US&page=${page}`).then(res => {
+    instance().get(`${URL}/now_playing?language=en-US&page=${page}`).then(res => {
       setTotalPage(res.data.total_pages)
       setData(res.data.results.map(item => {
         item.isLiked = false

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Logo, Lupa, Profile } from '../../../public/Icons';
+import { Logo, Lupa, Profile } from '../../assets/Icons';
 
 const Header = () => {
     const list = [
@@ -16,7 +16,7 @@ const Header = () => {
                 <NavLink to="/"><Logo /></NavLink>
                 <nav className='flex items-center gap-[44px]'>
                     {list.map(item => (
-                        <NavLink key={item.id} to={item.path} className={({ isActive }) => `text-white text-lg font-medium transition-colors duration-200 hover:text-[#E13C52] ${isActive ? 'text-[#E13C52] border-b-2 border-[#E13C52] pb-1' : ''}`}>
+                        <NavLink key={item.id} to={item.path} className={({ isActive }) => `text-white text-lg font-medium transition-colors duration-200 hover:text-[#E13C52] ${isActive ? 'bg-[#E13C52] py-[10px] px-[30.5px] rounded-[60px] hover:text-white' : ''}`}>
                             {item.title}
                         </NavLink>
                     ))}
